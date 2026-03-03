@@ -1,0 +1,30 @@
+set $bg0 #282828
+set $bg0_hard #1d2021
+set $bg1 #3c3836
+set $bg2 #504945
+set $fg1 #ebdbb2
+set $fg3 #a89984
+set $yellow #d79921
+set $red #cc241d
+
+set $border_color_focused $yellow
+set $border_color_unfocused $bg1
+set $border_color_inactive $bg2
+set $border_color_urgent $red
+
+set $background_color_focused $bg0
+set $background_color_unfocused $bg0_hard
+
+set $text_color_focused $fg1
+set $text_color_unfocused $fg3
+
+set $indicator_color $yellow
+set $placeholder_color $bg2
+
+client.focused $border_color_focused $background_color_focused $text_color_focused $indicator_color $border_color_focused
+client.unfocused $border_color_unfocused $background_color_unfocused $text_color_unfocused $placeholder_color $border_color_unfocused
+client.focused_inactive $border_color_inactive $background_color_unfocused $text_color_unfocused $placeholder_color $border_color_inactive
+client.urgent $border_color_urgent $background_color_unfocused $text_color_focused $border_color_urgent $border_color_urgent
+client.placeholder $placeholder_color $background_color_unfocused $text_color_unfocused $placeholder_color $placeholder_color
+
+output * bg /home/nico/Pictures/wallpaper/gentoo_bat.png fill

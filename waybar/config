@@ -1,0 +1,127 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 26,
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode",
+    "custom/media",
+    "custom/pwvol",
+    "custom/sepl",
+    "custom/clipboard"
+  ],
+  "modules-right": [
+    "bluetooth",
+    "custom/sepr",
+    "network",
+    "custom/sepr",
+    "cpu",
+    "custom/sepr",
+    "custom/cputemp",
+    "custom/sepr",
+    "custom/load",
+    "custom/sepr",
+    "memory",
+    "custom/sepr",
+    "clock",
+    "custom/sepr",
+    "custom/power",
+    "tray"
+  ],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "custom/load": {
+    "exec": "$HOME/.config/waybar/scripts/load.sh",
+    "interval": 2,
+    "return-type": "json"
+  },
+  "custom/sepl": {
+    "format": " | ",
+    "tooltip": false
+  },
+  "custom/sepr": {
+    "format": " | ",
+    "tooltip": false
+  },
+  "custom/pwvol": {
+    "exec": "bash -lc 'wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk \"{v=\\$2*100; if (\\$3==\\\"[MUTED]\\\") printf \\\"muted\\\"; else printf \\\"VOL %d%%\\\", v}\"'",
+    "interval": 1,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-"
+  },
+  "custom/cputemp": {
+    "exec": "$HOME/.config/waybar/scripts/cputemp.sh",
+    "interval": 5
+  },
+  "custom/clipboard": {
+    "format": "CLIPBOARD",
+    "on-click": "cliphist list | wofi --show dmenu -i | cliphist decode | wl-copy"
+  },
+  "custom/power": {
+    "format": "POWER",
+    "on-click": "$HOME/.config/waybar/scripts/powermenu.sh"
+  },
+  "bluetooth": {
+    "format": "BT  ",
+    "format-off": "BT OFF",
+    "format-on": "BT ON",
+    "format-connected": "BT CON",
+    "format-no-controller": "BT NO CON",
+    "on-click": "blueman-manager"
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%H:%M }",
+    "timezone": "Europe/Berlin",
+    "format-alt": "{:%a %Y-%m-%d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "cpu": {
+    "format": "CPU {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "MEM {}% "
+  },
+  "network": {
+    "on-click-middle": "nm-applet",
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "custom/media": {
+    "format": " {}",
+    "return-type": "json",
+    "max-length": 40,
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+  }
+}

@@ -1,0 +1,8 @@
+show=drun
+prompt=>
+width=500
+height=200
+lines=5
+hide_search=true
+term=kitty
+font=Noto Sans 15
