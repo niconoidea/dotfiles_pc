@@ -5,14 +5,16 @@
 
 window {
   margin: 0px;
-  border: 1px solid #3c3836;
-  background-color: #282828;
+  border: none;
+  background-color: transparent;
+  border-radius: 7px;
 }
 
 #outer-box {
   margin: 8px;
   border: none;
   background-color: #282828;
+  border-radius: 7px;
 }
 
 #inner-box {
@@ -26,7 +28,6 @@ window {
   border: 1px solid #3c3836;
   color: #ebdbb2;
   background-color: #1d2021;
-  border-radius: 0px;
 }
 
 #scroll {
@@ -42,7 +43,7 @@ window {
 
 #entry:selected {
   background-color: #3c3836;
-  border-radius: 0px;
+  border-radius: 7px;
 }
 
 #entry:selected #text {

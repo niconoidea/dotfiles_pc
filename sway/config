@@ -5,6 +5,9 @@
 # Read `man 5 sway` for a complete reference.
 exec waybar # further down in bar section for hidden bar
 exec_always ~/.config/sway/scripts/autotiling
+
+exec_always mako --default-timeout 5000
+
 #exec mpvpaper -o "--loop-playlist" eDP-1 /home/nico/Pictures/wallpaper/videos/misty-mountain-lake.1920x1080.mp4 & disown
 
 include /home/nico/.config/sway/colors/current
@@ -363,3 +366,7 @@ for_window [app_id=".*"] inhibit_idle fullscreen
 
 exec --no-startup-id env XDG_CURRENT_DESKTOP=sway dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 gaps inner 6
+
+
+corner_radius 5
+#default_dim_inactive 0.1

@@ -5,14 +5,15 @@
 
 window {
   margin: 0px;
-  border: 1px solid #3c3836;
-  background-color: #282828;
+  border: none;
+  background-color: transparent; 
 }
 
 #outer-box {
-  margin: 8px;
+  padding: 8px;
   border: none;
   background-color: #282828;
+  border-radius: 7px;
 }
 
 #inner-box {
@@ -42,6 +43,7 @@ window {
 #entry:selected {
   background-color: #3c3836;
   color: #fbf1c7;
+  border-radius: 7px;
 }
 
 #entry:selected #text {
