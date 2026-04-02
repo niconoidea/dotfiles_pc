@@ -2,6 +2,8 @@
 # SwayFX Configuration — Nico
 # ============================================================
 
+exec paplay /home/nico/.sounds/The\ Microsoft\ Sound.wav
+
 # ── Includes ────────────────────────────────────────────────
 include /home/nico/.config/sway/colors/current
 include /etc/sway/config-vars.d/*
