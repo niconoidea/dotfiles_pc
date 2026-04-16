@@ -89,7 +89,7 @@ bindsym $mod+e          exec $file-mgr
 bindsym $mod+g          exec steam
 bindsym $mod+k          exec kdeconnect-app
 bindsym $mod+s          exec signal-desktop
-bindsym $mod+p          exec $powermenu
+bindsym $mod+m          exec $powermenu
 
 # Clipboard picker
 bindsym $mod+c          exec cliphist list | wofi --show dmenu -i | cliphist decode | wl-copy
