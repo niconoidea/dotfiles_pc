@@ -19,7 +19,7 @@ set $right      i
 
 set $term       kitty
 set $menu       wofi --show drun
-set $browser    flatpak run app.zen_browser.zen
+set $browser    flatpak run io.github.ungoogled_software.ungoogled_chromium
 set $notes      obsidian
 set $powermenu  ~/.config/waybar/scripts/powermenu.sh
 set $file-mgr   thunar
@@ -95,7 +95,7 @@ bindsym $mod+m          exec $powermenu
 bindsym $mod+c          exec cliphist list | wofi --show dmenu -i | cliphist decode | wl-copy
 
 # Screenshot to clipboard
-bindsym $mod+Shift+s    exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Shift+s exec flameshot gui
 
 # Night light toggle
 bindsym $mod+n          exec ~/.config/sway/scripts/toggle_wl_sunset.sh
