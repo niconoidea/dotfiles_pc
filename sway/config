@@ -81,6 +81,8 @@ exec_always swayidle -w \
 
 exec_always autotiling-rs
 
+seat seat0 xcursor_theme Adwaita 18
+
 # ── Key Bindings: Applications ──────────────────────────────
 bindsym $mod+Return     exec $term
 bindsym $mod+d          exec $menu
@@ -88,7 +90,7 @@ bindsym $mod+b          exec $browser
 bindsym $mod+o          exec $notes
 bindsym $mod+e          exec $file-mgr
 bindsym $mod+g          exec steam
-bindsym $mod+k          exec kdeconnect-app
+bindsym $mod+k          exec flatpak run info.febvre.Komikku 
 bindsym $mod+s          exec signal-desktop
 bindsym $mod+m          exec $powermenu
 bindsym $mod+y          exec $youtube
