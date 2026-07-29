@@ -91,9 +91,10 @@ bindsym $mod+o          exec $notes
 bindsym $mod+e          exec $file-mgr
 bindsym $mod+g          exec steam
 bindsym $mod+k          exec flatpak run info.febvre.Komikku 
-bindsym $mod+s          exec signal-desktop
+bindsym $mod+s          exec signal-desktop --password-store="gnome-libsecret"
 bindsym $mod+m          exec $powermenu
 bindsym $mod+y          exec $youtube
+bindsym $mod+a		exec anki
 
 # Clipboard picker
 bindsym $mod+c          exec cliphist list | wofi --show dmenu -i | cliphist decode | wl-copy
@@ -118,7 +119,7 @@ bindsym $mod+Shift+e    exec swaynag -t warning \
 
 bindsym $mod+Shift+space    floating toggle
 bindsym $mod+space          focus mode_toggle
-bindsym $mod+a              focus parent
+#bindsym $mod+a              focus parent
 
 floating_modifier $mod normal
 
